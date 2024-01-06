@@ -1,6 +1,5 @@
 import React from 'react'
 import Carousel from './Home/Carousel'
-import Home from './Home/Carousel'
 import Feed from './Home/Feed'
 
 function page() {
