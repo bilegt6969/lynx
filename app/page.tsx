@@ -1,10 +1,13 @@
 import React from 'react'
-import Home from './Home/carousel'
+import Carousel from './Home/Carousel'
+import Home from './Home/Carousel'
+import Feed from './Home/Feed'
 
 function page() {
   return (
-    <div>
-      <Home/>
+    <div className='space-y-4'>
+      <Carousel/>
+      <Feed/>
       
       
     </div>

@@ -66,7 +66,7 @@ function Header({}) {
 
   return (
     <div className="sticky top-0 z-[30]">
-      <div className=" flex flex-col w-full sm:pb-[0rem] md:pb-[0rem] lg:pb-[0rem] pb-[0.5rem] pt-1    bg-white border-y border-gray-200">
+      <div className=" flex flex-col w-full  bg-white border-y border-gray-200">
         <div className="flex items-center justify-between  lg:space-x-[5rem] md:space-x-[5rem] sm:space-x-[5rem] sm:mx-10 sm:ml-[-2rem] md:mx-10 md:ml-[-2rem] lg:mx-10 ml-[1rem] font-sans">
           {/* Hamburger menu */}
           <div className="lg:hidden ml-[1rem] space-x-5 shrink-0 flex md:hidden sm:hidden">
@@ -593,7 +593,7 @@ function Header({}) {
         {result ? (
           <p></p>
         ) : (
-          <div className="z-[50]  bg-[#F4F3F1] font-normal border-t-[0.1rem] border-gray-300 shrink-0 hidden sm:flex p-2 mt-[1rem] justify-center text-xl lg:space-x-[50px] md:space-x-[30px] sm:space-x-[15px] items-center text-black ">
+          <div className="z-[0] flex space-x-3 text-[1rem]  bg-[#F4F3F1] font-normal border-t-[0.1rem] border-gray-300 shrink-0  sm:flex p-2 lg:mt-[1rem] justify-center lg:text-xl lg:space-x-[50px] md:space-x-[30px] sm:space-x-[15px] items-center text-black ">
             <li className="list-none">
               <p className="hover:text-gray-400 font-medium  cursor-pointer">
                 Sneakers

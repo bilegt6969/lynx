@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Navbar/>
-        <div className='mx-[4rem]'>
+        <div className='lg:mx-[2.5rem] mx-[1rem]'>
         {children}
         </div>
         </body>
