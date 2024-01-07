@@ -1,5 +1,6 @@
 'use client'
 import React, { useEffect, useMemo, useState } from 'react';
+import Image from 'next/image';
 
 interface DataItem {
   value: string;
@@ -15,11 +16,23 @@ interface DataItem {
 function Feed() {
   const [data, setData] = useState<DataItem[]>([]);
   const [data2, setData2] = useState<DataItem[]>([]);
+  const [data3, setData3] = useState<DataItem[]>([]);
+  const [data4, setData4] = useState<DataItem[]>([]);
+  const [data5, setData5] = useState<DataItem[]>([]);
+  const [data6, setData6] = useState<DataItem[]>([]);
+  const [data7, setData7] = useState<DataItem[]>([]);
+  const [data8, setData8] = useState<DataItem[]>([]);
+
+
+
+
+
+
 
 
   const fetchData = async () => {
     try {
-      const response = await fetch('https://ac.cnstrc.com/browse/collection_id/just-dropped?c=ciojs-client-2.35.2&key=key_XT7bjdbvjgECO5d8&i=387bfa2f-e4f1-45ae-b367-c158a1d279c4&s=21&page=1&num_results_per_page=6&sort_by=relevance&sort_order=descending&_dt=1703759368110');
+      const response = await fetch('https://ac.cnstrc.com/browse/collection_id/just-dropped?c=ciojs-client-2.35.2&key=key_XT7bjdbvjgECO5d8&i=387bfa2f-e4f1-45ae-b367-c158a1d279c4&s=21&page=1&num_results_per_page=15&sort_by=relevance&sort_order=descending&_dt=1703759368110');
       const resultedData = await response.json();
       setData(resultedData.response.results);
     } catch (error) {
@@ -28,50 +41,240 @@ function Feed() {
   };
   const fetchData2 = async () => {
     try {
-      const response = await fetch('https://ac.cnstrc.com/browse/group_id/sneakers?c=ciojs-client-2.35.2&key=key_XT7bjdbvjgECO5d8&i=387bfa2f-e4f1-45ae-b367-c158a1d279c4&s=25&page=1&num_results_per_page=6&sort_by=relevance&sort_order=descending&_dt=1704564766692');
+      const response = await fetch('https://ac.cnstrc.com/browse/group_id/sneakers?c=ciojs-client-2.35.2&key=key_XT7bjdbvjgECO5d8&i=387bfa2f-e4f1-45ae-b367-c158a1d279c4&s=25&page=1&num_results_per_page=15&sort_by=relevance&sort_order=descending&_dt=1704564766692');
       const resultedData = await response.json();
       setData2(resultedData.response.results);
     } catch (error) {
       console.error('Error fetching data2:', error);
     }
  };
+ const fetchData3 = async () => {
+  try {
+    const response = await fetch('https://ac.cnstrc.com/browse/collection_id/winter-sale?c=ciojs-client-2.35.2&key=key_XT7bjdbvjgECO5d8&i=387bfa2f-e4f1-45ae-b367-c158a1d279c4&s=27&page=1&num_results_per_page=15&sort_by=relevance&sort_order=descending&_dt=1704653711547');
+    const resultedData = await response.json();
+    setData3(resultedData.response.results);
+  } catch (error) {
+    console.error('Error fetching data2:', error);
+  }
+};
+const fetchData4 = async () => {
+  try {
+    const response = await fetch('https://ac.cnstrc.com/browse/collection_id/winter-sale-shoes?c=ciojs-client-2.35.2&key=key_XT7bjdbvjgECO5d8&i=387bfa2f-e4f1-45ae-b367-c158a1d279c4&s=27&page=1&num_results_per_page=15&sort_by=relevance&sort_order=descending&_dt=1704653914475');
+    const resultedData = await response.json();
+    setData4(resultedData.response.results);
+  } catch (error) {
+    console.error('Error fetching data2:', error);
+  }
+};
+const fetchData5 = async () => {
+  try {
+    const response = await fetch('https://ac.cnstrc.com/search/Nike?c=ciojs-client-2.35.2&key=key_XT7bjdbvjgECO5d8&i=387bfa2f-e4f1-45ae-b367-c158a1d279c4&s=27&page=1&num_results_per_page=15&sort_by=relevance&sort_order=descending&_dt=1704654082645');
+    const resultedData = await response.json();
+    setData5(resultedData.response.results);
+  } catch (error) {
+    console.error('Error fetching data2:', error);
+  }
+};
+const fetchData6 = async () => {
+  try {
+    const response = await fetch('https://ac.cnstrc.com/search/Jordan?c=ciojs-client-2.35.2&key=key_XT7bjdbvjgECO5d8&i=387bfa2f-e4f1-45ae-b367-c158a1d279c4&s=27&page=1&num_results_per_page=15&sort_by=relevance&sort_order=descending&_dt=1704654288458');
+    const resultedData = await response.json();
+    setData6(resultedData.response.results);
+  } catch (error) {
+    console.error('Error fetching data2:', error);
+  }
+};
+const fetchData7 = async () => {
+  try {
+    const response = await fetch('https://ac.cnstrc.com/search/yeezy?c=ciojs-client-2.35.2&key=key_XT7bjdbvjgECO5d8&i=387bfa2f-e4f1-45ae-b367-c158a1d279c4&s=27&page=1&num_results_per_page=15&sort_by=relevance&sort_order=descending&_dt=1704654348408');
+    const resultedData = await response.json();
+    setData7(resultedData.response.results);
+  } catch (error) {
+    console.error('Error fetching data2:', error);
+  }
+};
+const fetchData8 = async () => {
+  try {
+    const response = await fetch('https://ac.cnstrc.com/search/newbalance?c=ciojs-client-2.35.2&key=key_XT7bjdbvjgECO5d8&i=387bfa2f-e4f1-45ae-b367-c158a1d279c4&s=27&page=1&num_results_per_page=15&sort_by=relevance&sort_order=descending&_dt=1704654348408');
+    const resultedData = await response.json();
+    setData8(resultedData.response.results);
+  } catch (error) {
+    console.error('Error fetching data2:', error);
+  }
+};
 
   useEffect(() => {
     fetchData();
     fetchData2();
+    fetchData3();
+    fetchData4();
+    fetchData5();
+    fetchData6();
+    fetchData7();
+    fetchData8();
+
+
+
+
+
 
   }, []);
 
   const memoizedData = useMemo(() => data, [data]);
   const memoizedData2 = useMemo(() => data2, [data2]);
+  const memoizedData3 = useMemo(() => data3, [data3]);
+  const memoizedData4 = useMemo(() => data4, [data4]);
+  const memoizedData5 = useMemo(() => data5, [data5]);
+  const memoizedData6 = useMemo(() => data6, [data6]);
+  const memoizedData7 = useMemo(() => data7, [data7]);
+  const memoizedData8 = useMemo(() => data8, [data8]);
+
+
+
+
+
+
 
 
   return (
-<div className="lg:mt-5 lg:mb-5 lg:space-y-4">
-      <h1 className="text-xl font-['SuisseIntl-Medium',sans-serif;]">Just Dropped</h1>
-      <ul className='flex whitespace-nowrap lg:mt-5 lg:mb-5 lg:gap-[1.5rem] overflow-x-auto w-full'>
-        {memoizedData.map(item => (
-          <div className=' border xl:w-[100%] w-[30%] lg:space-x-2' key={item.data.id}>
-            <img src={item.data.image_url} alt={item.data.name} className='' />
-            <p className=' text-[0.75rem]'>{item.value}</p>
-            <p className='text-gray-600 lg:text-sm  text-[0.75rem]'>Lowest Ask</p>
-            <p className='font-semibold lg:text-xl font-["SuisseIntl-Regular",sans-serif;] text-[0.75rem]'>{`${parseFloat(item.data.lowest_price_cents) / 100}`+'$'}</p>
-           
-          </div>
-        ))}
-      </ul>
-      <h1 className="text-xl font-['SuisseIntl-Medium',sans-serif;]">Trending</h1>
-      <ul className='flex whitespace-nowrap lg:mt-5 lg:mb-5 lg:gap-[1.5rem] grid-cols-6 overflow-x-auto w-full'>
-        {memoizedData2.map(item => (
-          <div className='border lg:space-x-2' key={item.data.id}>
-            <img src={item.data.image_url} alt={item.data.name} />
-            <p>{item.value}</p>
-            <p className='text-gray-600 lg:text-sm'>Lowest Ask</p>
-            <p className='font-semibold lg:text-xl font-["SuisseIntl-Regular",sans-serif;]'>{`${parseFloat(item.data.lowest_price_cents) / 100}`+'$'}</p>
-          </div>
-        ))}</ul>
+<div className="lg:my-5 lg:space-y-4">
+      <h1 className="lg:text-2xl font-semibold">New Releases</h1>
+      <div className="flex overflow-x-auto w-auto">
+      {memoizedData.map((item, index) => (
+      <div key={index} className='flex-shrink-0 items-center lg:max-w-[15rem] max-w-[10rem] space-x-4'>
+      <Image width={500} height={500} src={item.data.image_url} alt="" />
+      <p className='lg:max-w-[10rem] lg:text-lg text-sm'>{item.value}</p>
+      <div className="mt-2">
+        <p className='text-gray-600 text-sm'>Lowest Ask</p>
+        <p className='text-lg font-semibold text-black cursor-auto my-1'>
+          {'$' + `${parseFloat(item.data.lowest_price_cents) / 100}`}
+        </p>
+      </div>
+    </div>
+  ))}
+</div>
+      
+      
+      <h1 className="lg:text-2xl font-semibold">Trending</h1>
+      <div className="flex overflow-x-auto w-auto">
+      {memoizedData2.map((item, index) => (
+      <div key={index} className='flex-shrink-0 items-center lg:max-w-[15rem] max-w-[10rem] space-x-4'>
+      <Image width={500} height={500} src={item.data.image_url} alt="" />
+
+      <p className='lg:max-w-[10rem] lg:text-lg text-sm'>{item.value}</p>
+      <div className="mt-2">
+        <p className='text-gray-600 text-sm'>Lowest Ask</p>
+        <p className='text-lg font-semibold text-black cursor-auto my-1'>
+          {'$' + `${parseFloat(item.data.lowest_price_cents) / 100}`}
+        </p>
+      </div>
+    </div>
+  ))}
+</div>
+<h1 className="lg:text-2xl font-semibold">Nike</h1>
+      <div className="flex overflow-x-auto w-auto">
+      {memoizedData5.map((item, index) => (
+      <div key={index} className='flex-shrink-0 items-center lg:max-w-[15rem] max-w-[10rem] space-x-4'>
+      <Image width={500} height={500} src={item.data.image_url} alt="" />
+
+      <p className='lg:max-w-[10rem] lg:text-lg text-sm'>{item.value}</p>
+      <div className="mt-2">
+        <p className='text-gray-600 text-sm'>Lowest Ask</p>
+        <p className='text-lg font-semibold text-black cursor-auto my-1'>
+          {'$' + `${parseFloat(item.data.lowest_price_cents) / 100}`}
+        </p>
+      </div>
+    </div>
+  ))}
+</div>
+
+<h1 className="lg:text-2xl font-semibold">Jordan</h1>
+      <div className="flex overflow-x-auto w-auto">
+      {memoizedData6.map((item, index) => (
+      <div key={index} className='flex-shrink-0 items-center lg:max-w-[15rem] max-w-[10rem] space-x-4'>
+      <Image width={500} height={500} src={item.data.image_url} alt="" />
+
+      <p className='lg:max-w-[10rem] lg:text-lg text-sm'>{item.value}</p>
+      <div className="mt-2">
+        <p className='text-gray-600 text-sm'>Lowest Ask</p>
+        <p className='text-lg font-semibold text-black cursor-auto my-1'>
+          {'$' + `${parseFloat(item.data.lowest_price_cents) / 100}`}
+        </p>
+      </div>
+    </div>
+  ))}
+</div>
+<h1 className="lg:text-2xl font-semibold">Yeezy</h1>
+      <div className="flex overflow-x-auto w-auto">
+      {memoizedData7.map((item, index) => (
+      <div key={index} className='flex-shrink-0 items-center lg:max-w-[15rem] max-w-[10rem] space-x-4'>
+      <Image width={500} height={500} src={item.data.image_url} alt="" />
+
+      <p className='lg:max-w-[10rem] lg:text-lg text-sm'>{item.value}</p>
+      <div className="mt-2">
+        <p className='text-gray-600 text-sm'>Lowest Ask</p>
+        <p className='text-lg font-semibold text-black cursor-auto my-1'>
+          {'$' + `${parseFloat(item.data.lowest_price_cents) / 100}`}
+        </p>
+      </div>
+    </div>
+  ))}
+</div>
+<h1 className="lg:text-2xl font-semibold">Newbalance</h1>
+      <div className="flex overflow-x-auto w-auto">
+      {memoizedData8.map((item, index) => (
+      <div key={index} className='flex-shrink-0 items-center lg:max-w-[15rem] max-w-[10rem] space-x-4'>
+      <Image width={500} height={500} src={item.data.image_url} alt="" />
+
+      <p className='lg:max-w-[10rem] lg:text-lg text-sm'>{item.value}</p>
+      <div className="mt-2">
+        <p className='text-gray-600 text-sm'>Lowest Ask</p>
+        <p className='text-lg font-semibold text-black cursor-auto my-1'>
+          {'$' + `${parseFloat(item.data.lowest_price_cents) / 100}`}
+        </p>
+      </div>
+    </div>
+  ))}
+</div>
+
+<h1 className="lg:text-2xl font-semibold">Winter Sale</h1>
+      <div className="flex overflow-x-auto w-auto">
+      {memoizedData3.map((item, index) => (
+      <div key={index} className='flex-shrink-0 items-center lg:max-w-[15rem] max-w-[10rem] space-x-4'>
+      <Image width={500} height={500} src={item.data.image_url} alt="" />
+
+      <p className='lg:max-w-[10rem] lg:text-lg text-sm'>{item.value}</p>
+      <div className="mt-2">
+        <p className='text-gray-600 text-sm'>Lowest Ask</p>
+        <p className='text-lg font-semibold text-black cursor-auto my-1'>
+          {'$' + `${parseFloat(item.data.lowest_price_cents) / 100}`}
+        </p>
+      </div>
+    </div>
+  ))}
+</div>
+
+<h1 className="lg:text-2xl font-semibold">Winter Sale Shoes</h1>
+      <div className="flex overflow-x-auto w-auto">
+      {memoizedData4.map((item, index) => (
+      <div key={index} className='flex-shrink-0 items-center lg:max-w-[15rem] max-w-[10rem] space-x-4'>
+      <Image width={500} height={500} src={item.data.image_url} alt="" />
+
+      <p className='lg:max-w-[10rem] lg:text-lg text-sm'>{item.value}</p>
+      <div className="mt-2">
+        <p className='text-gray-600 text-sm'>Lowest Ask</p>
+        <p className='text-lg font-semibold text-black cursor-auto my-1'>
+          {'$' + `${parseFloat(item.data.lowest_price_cents) / 100}`}
+        </p>
+      </div>
+    </div>
+  ))}
+</div>
+
       
     </div>
+
+    
 
   );
 }

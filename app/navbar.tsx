@@ -66,8 +66,8 @@ function Header({}) {
 
   return (
     <div className="sticky top-0 z-[30]">
-      <div className=" flex flex-col w-full  bg-white border-y border-gray-200">
-        <div className="flex items-center justify-between  lg:space-x-[5rem] md:space-x-[5rem] sm:space-x-[5rem] sm:mx-10 sm:ml-[-2rem] md:mx-10 md:ml-[-2rem] lg:mx-10 ml-[1rem] font-sans">
+      <div className="sticky top-0 z-[30] flex flex-col w-full  bg-white border-b border-gray-200">
+        <div className=" top-0 z-[30] flex items-center justify-between  lg:space-x-[5rem] md:space-x-[5rem] sm:space-x-[5rem] sm:mx-10 sm:ml-[-2rem] md:mx-10 md:ml-[-2rem] lg:mx-10 ml-[1rem] font-sans">
           {/* Hamburger menu */}
           <div className="lg:hidden ml-[1rem] space-x-5 shrink-0 flex md:hidden sm:hidden">
             <button className="focus:outline-none z-10" onClick={toggleMenu}>
@@ -78,24 +78,16 @@ function Header({}) {
               )}
             </button>
             {/*Mobile searchbar*/}
-            <div className="items-center flex">
-              <button className="focus:outline-none z-10" onClick={toggleNav}>
-                {isOngorhoi ? (
-                  <XMarkIcon className="flex text-white ml-[-0.5rem] transition-all w-8 h-8" />
-                ) : (
-                  <MagnifyingGlassIcon className="flex z-10 text-black   w-6 h-6" />
-                )}
-              </button>
-            </div>
+            
           </div>
 
           {/* Logo */}
-          <div className=" justify-center">
+          <div className="justify-center">
             <a href="../">
               <Image
                 src={Logo}
                 alt="logo"
-                className="font-semibold text-2xl lg:w-[4rem] lg:mt-1 md:w-[7rem] sm:w-[7rem] w-[3rem]"
+                className="lg:w-[4rem] lg:mt-1 md:w-[7rem] sm:w-[7rem] w-[3rem]"
                 width={150}
                 height={150}
               />
@@ -121,15 +113,24 @@ function Header({}) {
           {/* RightSide */}
           <div className="z-[50] items-center flex mr-10 space-x-5">
             <div className="flex lg:ml-[-1rem] lg:mr-[2rem] space-x-5">
-              <h1 className="text-lg hidden lg:flex">Browse</h1>
-              <h1 className="text-lg hidden lg:flex">Sell</h1>
-              <h1 className="text-lg hidden lg:flex">About</h1>
-              <h1 className="text-lg hidden lg:flex">Help</h1>
+              <h1 className="text-lg hidden xl:flex lg:hidden">Browse</h1>
+              <h1 className="text-lg hidden xl:flex lg:hidden">Sell</h1>
+              <h1 className="text-lg hidden xl:flex lg:hidden">About</h1>
+              <h1 className="text-lg hidden xl:flex lg:hidden">Help</h1>
             </div>
 
-            <HeartIcon className="hover:text-gray-400 transition duration-150 w-6 h-6 mr-[2rem] shrink-0 flex" />
-            <ShoppingBagIcon className="hover:text-gray-400 transition duration-150 w-6 h-6" />
-            <UserIcon className="hover:text-gray-400 transition duration-150 hidden sm:flex w-6 h-6" />
+            <HeartIcon className="hover:text-gray-400 transition duration-150 sm:flex w-6 h-6 hidden" />
+            <ShoppingBagIcon className="hover:text-gray-400 transition duration-150 sm:flex w-6 h-6 hidden" />
+            <UserIcon className="hover:text-gray-400 transition duration-150 sm:flex w-6 h-6 hidden" />
+            <div className="items-center flex lg:hidden">
+              <button className="focus:outline-none z-10" onClick={toggleNav}>
+                {isOngorhoi ? (
+                  <XMarkIcon className="flex text-white ml-[-0.5rem] transition-all w-8 h-8" />
+                ) : (
+                  <MagnifyingGlassIcon className="flex z-10 text-black w-6 h-6" />
+                )}
+              </button>
+            </div>
           </div>
           {/* SearchBar (mobile) */}
           <motion.div
@@ -589,39 +590,9 @@ function Header({}) {
             </div>
           </motion.div>
         </div>
-        {/*under navbar*/}
-        {result ? (
-          <p></p>
-        ) : (
-          <div className="z-[0] flex space-x-3 text-[1rem]  bg-[#F4F3F1] font-normal border-t-[0.1rem] border-gray-300 shrink-0  sm:flex p-2 lg:mt-[1rem] justify-center lg:text-xl lg:space-x-[50px] md:space-x-[30px] sm:space-x-[15px] items-center text-black ">
-            <li className="list-none">
-              <p className="hover:text-gray-400 font-medium  cursor-pointer">
-                Sneakers
-              </p>
-            </li>
-            <li className="list-none">
-              <p className="hover:text-gray-400 font-medium  cursor-pointer">
-                Shoes
-              </p>
-            </li>
-            <li className="list-none">
-              <p className="hover:text-gray-400 font-medium  cursor-pointer">
-                Apparel
-              </p>
-            </li>
-            <li className="list-none">
-              <p className="hover:text-gray-400 font-medium  cursor-pointer">
-                Electronics
-              </p>
-            </li>
-            <li className="list-none">
-              <p className="hover:text-gray-400 font-medium  cursor-pointer">
-                Collectibles
-              </p>
-            </li>
-          </div>
-        )}
-      </div>
+        </div>
+
+          
     </div>
   );
 }
