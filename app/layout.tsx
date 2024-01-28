@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import Navbar from '../app/navbar'
+import Navbar from './ui/navbar'
 import Carousel from './Home/Carousel'
 import UnderNavbar from './underNavbar'
 import Footer from './Footer'
@@ -23,9 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Navbar/>
-        <UnderNavbar/>
-        <Carousel/>
-        <div className='lg:mx-[2.5rem] mx-[1rem]'>
+        <div className='lg:mx-[2.5rem] mx-[0.5rem]'>
         {children}
         </div>
         <Footer/>

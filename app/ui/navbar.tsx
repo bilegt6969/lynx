@@ -12,7 +12,8 @@ import {
   ChevronLeftIcon,
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
-import Logo from "../img/lynx.jpg";
+import Logo from "../../img/lynx.jpg";
+import router from "next/router";
 
 function Header({}) {
   const [result, setResult] = useState(null);
@@ -82,12 +83,15 @@ function Header({}) {
           </div>
 
           {/* Logo */}
-          <div className="justify-center">
+          <div className="z-50 justify-center">
             <a href="../">
               <Image
+              onClick={() => router.push('../')}
                 src={Logo}
                 alt="logo"
-                className="lg:w-[4rem] lg:mt-1 md:w-[7rem] sm:w-[7rem] w-[3rem]"
+
+                
+                className="lg:w-[4rem] lg:mt-1 md:w-[7rem] sm:w-[7rem] w-[3rem] cursor-pointer"
                 width={150}
                 height={150}
               />
@@ -143,7 +147,7 @@ function Header({}) {
             transition={{
               duration: 0.5,
               ease: [0, 0.71, 0.2, 1.01],
-              type: "spring",
+              type: "none",
             }}
           >
             <div className="mx-auto space-x-2 mt-[8rem] justify-center flex items-center">

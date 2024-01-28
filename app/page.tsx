@@ -1,14 +1,10 @@
 import React from 'react'
-import Carousel from './Home/Carousel.js'
-import Feed from './Home/Feed'
+import Home from './Home'
 
 function page() {
   return (
     <div className='space-y-4'>
-      <Feed/>
-
-      
-      
+      <Home/>
     </div>
   )
 }

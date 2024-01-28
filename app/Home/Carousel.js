@@ -20,8 +20,10 @@ function Carousel() {
     <div className='lg:mt-6 mx-auto justify-center items-center flex '>
         <Image
         src={imageSrc}
+        objectFit='cover'
+        
           alt="Background Image"
-          className='w-auto h-auto '
+          className=''
         />
     </div>
  )
