@@ -1,6 +1,6 @@
 import React from 'react'
 import Carousel from './Home/Carousel'
-import Feed from './Home/feed'
+import Feed from './Home/Feed'
 import UnderNavbar from './underNavbar'
 
 function Home() {

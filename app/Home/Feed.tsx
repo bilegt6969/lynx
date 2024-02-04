@@ -1,5 +1,6 @@
 'use client'
 import { useRouter } from 'next/navigation';
+import useSWR from 'swr'
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 interface DataItem {
@@ -14,7 +15,7 @@ interface DataItem {
   };
 }
 
-function Feed() {
+export default function Feed() {
   const [data, setData] = useState<DataItem[]>([]);
   const router = useRouter();
 
@@ -60,4 +61,3 @@ function Feed() {
   );
 }
 
-export default Feed;

@@ -30,6 +30,7 @@
     "slick-carousel": "^1.8.1",
     "sneaks-api": "^1.2.3",
     "swiper": "^11.0.5",
+    "swr": "^2.2.4",
     "tailwind-merge": "^2.1.0",
     "tailwindcss-animate": "^1.0.7",
     "tls": "^0.0.1"
