@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 const cloudscraper = require('cloudscraper');
 const cheerio = require('cheerio');
 import Image from 'next/image'
+import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 
 
 
@@ -28,7 +29,7 @@ async function page({ params }: { params: { slug: string } }) {
     return (
       <div className="">
         
-        {modifiedUrls.map((url, index) => (
+        {modifiedUrls.map((url: string | StaticImport, index: React.Key | null | undefined) => (
           <div key={index} className="slider-item">
             <Image src={url} width={400} height={400} alt={`Image ${index}`} />
           </div>
