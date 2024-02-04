@@ -7,6 +7,7 @@ import UnderNavbar from './underNavbar'
 import Footer from './Footer'
 
 
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {

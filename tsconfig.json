@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/Home/Carousel.js", "app/api/getData.js", "app/api/page.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/Home/Carousel.js", "app/api/getData.js", "app/api/page.js", "app/product/[slug]/page.js"],
   "exclude": ["node_modules"]
 }

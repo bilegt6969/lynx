@@ -2,7 +2,6 @@
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-
 interface DataItem {
   value: string;
   data: {
@@ -36,14 +35,16 @@ function Feed() {
 
 
   const handleClick = (slug: string) => () => {
-    router.push(`/product/${slug}` );
+    router.push(`/product/${slug}`);
   };
+  
+
 
   return (
     <div>
       <div className="flex overflow-x-auto w-auto">
         {data.map((item) => (
-          <div key={item.data.id} onClick={handleClick(item.data.slug)} className="flex-shrink-0 items-center lg:max-w-[15rem] max-w-[10rem] space-x-4 cursor-pointer">
+          <div key={item.data.id} onClick={handleClick(item.data.slug,)} className="flex-shrink-0 items-center lg:max-w-[15rem] max-w-[10rem] space-x-4 cursor-pointer">
             <Image width={500} height={500} src={item.data.image_url} alt="" />
             <p className="lg:max-w-[10rem] lg:text-lg text-sm">{item.value}</p>
             <div className="mt-2">
