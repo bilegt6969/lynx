@@ -1,0 +1,49 @@
+// 
+
+const express = require('express')
+const app = express();
+const PORT = 8080;
+const cloudscraper = require('cloudscraper');
+const cheerio = require('cheerio');
+const url = 'https://ac.cnstrc.com/browse/collection_id/just-dropped?c=ciojs-client-2.35.2&key=key_XT7bjdbvjgECO5d8&i=ac9683ff-0a93-49ca-bfe2-9c99733bbc4d&s=4&page=1&num_results_per_page=24&sort_by=relevance&sort_order=descending&_dt=1706382670483';
+
+cloudscraper.get(url)
+    .then(html => {
+        const output = JSON.parse(html);
+
+        const slug = output.response.results[2].data.slug;
+        const webUrl = `https://www.goat.com/sneakers/${slug}`;
+
+        return cloudscraper.get(webUrl);
+    })
+    .then(html => {
+        const $ = cheerio.load(html);
+
+        const scriptTag = $('script#__NEXT_DATA__');
+        const scriptCode = JSON.parse(scriptTag.html());
+
+        const yashka = scriptCode.props.pageProps.productTemplate.productTemplateExternalPictures;
+
+        // Modify each URL in yashka
+        const modifiedUrls = yashka.map(item => {
+            let modifiedUrl = item.mainPictureUrl.replace('/image.goat.com/', '/image.goat.com/transform/v1/');
+            return modifiedUrl;
+        });
+
+        console.log(modifiedUrls);
+
+        app.use(express.json())
+
+        app.get('/api', (req, res) => {
+            res.status(200).send({
+                title: modifiedUrls
+            });
+        })
+
+        app.listen(PORT, () => {
+            console.log(`Server is listening on port ${PORT}`);
+        });
+    })
+    .catch(err => {
+        console.error(err);
+    });
