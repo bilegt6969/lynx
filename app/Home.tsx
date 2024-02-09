@@ -2,6 +2,7 @@ import React from 'react'
 import Carousel from './Home/Carousel'
 import Feed from './Home/Feed'
 import UnderNavbar from './underNavbar'
+import Al from './Home/al.js'
 
 function Home() {
   return (
@@ -9,6 +10,8 @@ function Home() {
     <UnderNavbar/>
     <Carousel/>
     <Feed/>
+    <Al/>
+
 
 
       
